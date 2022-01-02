@@ -31,13 +31,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate(Bundle?) called")
+        // 위젯을 인플레이트해 뷰 객체로 생성한 후 화면에 보여준다.
         setContentView(R.layout.activity_main)
 
+        // 인플레이트된 위젯의 객체 참조 얻기
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
         nextButton = findViewById(R.id.next_button)
         questionTextView = findViewById(R.id.question_text_view)
 
+        // 사용자와의 상호 작용을 처리하기 위해 위젯에 리스너 설정 및 외부의 모델 데이터 연결.
         trueButton.setOnClickListener { view: View ->
             checkAnswer(true)
         }
